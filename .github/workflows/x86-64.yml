@@ -9,9 +9,14 @@
 name: Build x86/64 openwrt
 
 on:
+  #workflow_dispatch:
+  repository_dispatch:
   workflow_dispatch:
-  schedule:
-    - cron: 0 18 * * *
+    inputs:
+      ssh:
+        description: 'ssh'
+        required: false
+        default: 'false'
   # watch:
   #   types: started
 
